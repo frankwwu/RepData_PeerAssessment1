@@ -1,3 +1,6 @@
+---
+output: html_document
+---
 # Reproducible Research: Peer Assessment 1
 
 
@@ -52,7 +55,7 @@ xlab = "Total number of steps taken each day"
 hist(df.day$steps, main = title, xlab = xlab, col = 'deepskyblue', border = 'deepskyblue4')
 ```
 
-<img src="./PA1_template_files/figure-html/unnamed-chunk-4.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="672" />
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.png) 
 
 2. The mean and median total number of steps taken per day
 
@@ -77,7 +80,7 @@ median(df.day$steps, na.rm = TRUE)
 
 ### What is the average daily activity pattern?
 
-1. Make a time series plot (i.e. type = l) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
+1. Make a time series plot (i.e. type = “l”) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
 
 
 ```r
@@ -87,7 +90,7 @@ ylab="Average number of steps taken"
 qplot(interval, mean.steps, data=df.mean.interval, geom="line", main=title, xlab=xlab, ylab=ylab)  
 ```
 
-<img src="./PA1_template_files/figure-html/unnamed-chunk-6.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="672" />
+![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6.png) 
 
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps? 5-minute interval with maximum number of steps:
 
@@ -169,7 +172,7 @@ xlab = "Total number of steps taken each day"
 hist(df.day.new$steps, main = title, xlab = xlab, col='deepskyblue', border='deepskyblue4')
 ```
 
-<img src="./PA1_template_files/figure-html/unnamed-chunk-11.png" title="plot of chunk unnamed-chunk-11" alt="plot of chunk unnamed-chunk-11" width="672" />
+![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11.png) 
 
 ```r
 #The mean and median total number of steps taken per day
@@ -203,11 +206,11 @@ hist(df.day$steps, main = "Activity frequeny (with NA)", xlab = xlab, col='india
 hist(df.day.new$steps, main = "Activity frequeny (NA replaced)", xlab = xlab, col='seagreen1', border='seagreen4')
 ```
 
-<img src="./PA1_template_files/figure-html/unnamed-chunk-12.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" width="672" />
+![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12.png) 
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
-1. Create a new factor variable in the dataset with two levels  weekday and weekend indicating whether a given date is a weekday or weekend
+1. Create a new factor variable in the dataset with two levels – “weekday” and “weekend” indicating whether a given date is a weekday or weekend
 day
 
 
@@ -252,5 +255,5 @@ xyplot(df.new.2.mean.interval$mean.steps ~ df.new.2.mean.interval$interval | df.
        layout = c(1, 2), type = "l", xlab = "Interval", ylab = "Number of steps")
 ```
 
-<img src="./PA1_template_files/figure-html/unnamed-chunk-14.png" title="plot of chunk unnamed-chunk-14" alt="plot of chunk unnamed-chunk-14" width="672" />
+![plot of chunk unnamed-chunk-14](figure/unnamed-chunk-14.png) 
 
